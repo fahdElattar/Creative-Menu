@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <button>
+        <i class="fa fa-bars"></i>
+    </button>
+    <div class="menu">
+        <div class="links">
+            <div class="link">
+                about
+            <span><i class="fa fa-chevron-right"></i></span>
+        </div>
+            <div class="link">
+                portfolio
+                <span><i class="fa fa-chevron-right"></i></span>
+            </div>
+            <div class="link">
+                services
+                <span><i class="fa fa-chevron-right"></i></span>
+            </div>
+            <div class="link">
+                contact
+                <span><i class="fa fa-chevron-right"></i></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        const btn = document.querySelector('button')
+        const i = document.querySelector('i')
+        const menu = document.querySelector('.menu')
+        const links = document.querySelector('.links')
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('active')
+            links.classList.toggle('active')
+
+            i.classList.contains('fa-bars') ? 
+            i.classList.replace('fa-bars', 'fa-xmark') : 
+            i.classList.replace('fa-xmark', 'fa-bars');
+        })
+    </script>
+</body>
+</html>

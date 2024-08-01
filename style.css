@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('./Img/green.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+button {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+    z-index: 1;
+}
+
+.menu {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, .5);
+    clip-path: circle(0% at top left);
+    transition: clip-path .6s ease-in-out;
+}
+
+.menu.active {
+    clip-path: circle(100%);
+}
+
+.links {
+    position: absolute;
+    left: 5rem;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+.link {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    color: #fff;
+    cursor: pointer;
+    translate: -3rem 0;
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+}
+
+.link span {
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    font-size: 1rem;
+    margin-left: .8rem;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+
+.link:hover span {
+    opacity: 1;
+}
+
+.links:has(.link:hover) .link:not(:hover) {
+    color: rgba(255, 255, 255, .4);
+}
+
+.link:nth-child(1) {
+    transition: 
+        translate .5s .1s ease-in-out,
+        opacity .5s .1s ease-in-out,
+        visibility .5s .1s ease-in-out,
+        color .3s ease-in-out
+    ;
+}
+
+.link:nth-child(2) {
+    transition: 
+        translate .5s .15s ease-in-out,
+        opacity .5s .15s ease-in-out,
+        visibility .5s .15s ease-in-out,
+        color .4s ease-in-out
+    ;
+}
+
+.link:nth-child(3) {
+    transition: 
+        translate .5s .2s ease-in-out,
+        opacity .5s .2s ease-in-out,
+        visibility .5s .2s ease-in-out,
+        color .3s ease-in-out
+    ;
+}
+
+.link:nth-child(4) {
+    transition: 
+        translate .5s .25s ease-in-out,
+        opacity .5s .25s ease-in-out,
+        visibility .5s .25s ease-in-out,
+        color .3s ease-in-out
+    ;
+}
+
+.links.active .link {
+    translate: 0 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.link:last-child {
+    margin: 0;
+}
